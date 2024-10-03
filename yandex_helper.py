@@ -1,15 +1,8 @@
-from const import TOKEN, CLIENT_LOGIN
-
-
-def get_headers(TOKEN, CLIENT_LOGIN) -> dict[str, str]:
+def get_headers(token: str, client_login: str) -> dict[str, str]:
     return {
-        # OAuth-токен. Использование слова Bearer обязательно
-        "Authorization": f"Bearer {TOKEN}",
-        # Логин клиента рекламного агентства
-        "Client-Login": CLIENT_LOGIN,
-        # Язык ответных сообщений
+        "Authorization": f"Bearer {token}",
+        "Client-Login": f"{client_login}",
         "Accept-Language": "ru",
-        # Режим формирования отчета
         "processingMode": "auto"
 
     }
